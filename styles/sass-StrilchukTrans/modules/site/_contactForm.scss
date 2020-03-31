@@ -1,0 +1,129 @@
+.contact-form {
+   width: 400px;
+   background-color: #c8102a;
+   padding: 25px 18px;
+
+   .title_form {
+      font-family: $cuprum;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 24px;
+      text-align: center;
+      @include mobile {
+         font-size: 18px;
+      }
+   }
+   .subtitle_form {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 300;
+      font-style: italic;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      margin-top: 5px;
+      @include mobile {
+         font-size: 12px;
+      }
+      @include mobile-small {
+         text-align: center;
+      }
+   }
+   form#contacts-form {
+      .form-group {
+         margin-bottom: 12px;
+         > input {
+            height: 35px;
+            width: 100%;
+            padding: 0 10px;
+            color: #818181;
+            font-size: 14px;
+            font-weight: 300;
+            outline: none;
+            border: 1px solid #dbdada;
+            background-color: #fefdfd;
+            @include mobile {
+               font-size: 12px;
+            }
+         }
+         > textarea {
+            width: 100%;
+            height: 125px;
+            padding: 10px;
+            color: #818181;
+            font-size: 14px;
+            font-weight: 300;
+            outline: none;
+            border: 1px solid #dbdada;
+            background-color: #fefdfd;
+            font-family: $roboto;
+            @include mobile {
+               font-size: 12px;
+            }
+         }
+         .help-block-error {
+            font-size: 13px;
+            padding: 4px 5px 0;
+            @include mobile {
+               font-size: 12px;
+            }
+         }
+      }
+      button[type="submit"] {
+         border: 1px solid #fff;
+         width: 100%;
+         height: 40px;
+         background-color: transparent;
+         font-family: $cuprum;
+         color: #fff;
+         text-transform: uppercase;
+         font-size: 16px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         transition: 0.2s;
+         @include unSelect;
+         position: relative;
+         overflow: hidden;
+         @include mobile {
+            font-size: 14px;
+         }
+         > span {
+            position: relative;
+            z-index: 1;
+         }
+         &:before {
+            @include pseudo;
+            width: 100%;
+            height: 100%;
+            top: 100%;
+            left: 0;
+            @include triangleRight(200px, 200px, #fff);
+            border-bottom: none;
+            transition: 0.5s;
+         }
+         &:after {
+            @include pseudo;
+            width: 100%;
+            height: 100%;
+            top: 100%;
+            right: 0;
+            @include triangleLeft(200px, 200px, #fff);
+            border-bottom: none;
+            transition: 0.5s;
+         }
+
+        &:hover {
+          color: #c8102a;
+          &:before {
+            border-width: 400px;
+            top: -500%;
+          }
+          &:after {
+            border-width: 400px;
+            top: -500%;
+          }
+        }
+      }
+   }
+}

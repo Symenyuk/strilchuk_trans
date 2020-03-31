@@ -1,0 +1,65 @@
+
+//**************(null-site START:)*****************//
+1. шрифт сайта (основной и второстепенный)
+2. размер и цвет шрифту по умолчанию
+3. background-color
+4. max-width site
+
+//******************Font Weight:*******************//
+100-This(Heivline)
+200-Extra Light(Ultra Light)
+300-Light
+400-Normal(Regular)
+500-Medium
+600-SemiBold(DemiBold)
+700-Bold
+800-Extra Bold(Ultra Light)
+900-Black(Heavy)
+
+//******************Box Shadow:*******************//
+0			1px 		5px
+размах% 	смещенияPX  размерPX
+1px 		5px			3px			8px		
+смешПоГориз смешПоВерт  размитие	толщина
+
+
+//******************SASS MAP:*******************//
+$colors: (
+	$primary:  #333,
+	$secondary:#555,
+	$bland:    #ff0033,
+);
+using->: .logo {map-get($colors, bland);}
+
+//*************************************//
+.nav li:not(:last-child) {
+	border: 1px solid red;
+}
+table-layout: fixed; - ячейке в табл. одинаков.ширины
+
+a[href^="http"]:empty::before { 
+	content: attr(href); - Отображение ссылок, когда a-элемент не имеет текстового значения, но при этом атрибут href содержит ссилку
+}
+a[href]:not([class]) { - стиль ссылок по умолчанию (без класса)
+	color: #000;
+	text-decoration: underline;
+}
+
+
+//***************Connection Sass(.scss) to the Angular CLI (old .css)**********************//
+1. npm install node-sass --save-dev
+2. ng set defaults.styleExt scss (ng set --global defaults.styleExt scss)
+3. change styleExt to sass or scss for desired syntax in .angular-cli.json
+"defaults": {
+     "styleExt": "scss",
+}
+"styles": [
+        "styles.scss"
+      ],
+
+4. Rename all files .css to .scss
+
+*New projects ->
+1. ng new NameProject --style=scss
+2. npm install node-sass --save-dev
+3. ng set defaults.styleExt scss

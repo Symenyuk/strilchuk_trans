@@ -1,0 +1,13 @@
+// fonts-family
+$roboto: 'Roboto', sans-serif;
+$condensed: 'Roboto Condensed', sans-serif;
+$cuprum: 'Cuprum', sans-serif;
+
+// color
+$body-bgc: #fff;
+
+
+body {
+    font-family: $roboto;
+    background-color: $body-bgc;
+}

@@ -1,0 +1,322 @@
+.page.service {
+   .header-page {
+      width: 100%;
+      height: 350px;
+      background-image: url(../img/service-bg.png);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: cover;
+      @include max1024 {
+         background-position: -450px 0;
+      }
+      @include tablet {
+         background-position: -580px 0;
+      }
+      @include mobile {
+         background-position: -650px 0;
+      }
+      @include mobile-small {
+         background-position: -700px 0;
+      }
+      > .container {
+         display: flex;
+         justify-content: flex-end;
+         .descript_text {
+            width: 50%;
+            @include tablet {
+               width: 60%;
+            }
+            h3 {
+               font-family: $condensed;
+               color: #004d74;
+               font-size: 36px;
+               font-weight: 700;
+               text-transform: uppercase;
+               @include mobile {
+                  font-size: 18px;
+               }
+            }
+            .descr {
+               color: #565656;
+               font-size: 14px;
+               font-weight: 300;
+               padding: 15px 0;
+               line-height: 1.7;
+               @include mobile {
+                  font-size: 12px;
+                  line-height: 1.5;
+               }
+               @include mobile-small {
+                  line-height: 1.2;
+               }
+            }
+            .order {
+               @include buttonBlauEffect;
+            }
+         }
+      }
+   }
+   .heading {
+      margin-top: 35px;
+      margin-bottom: 30px;
+   }
+
+   .wrap_inform_service {
+      display: flex;
+      margin-bottom: 40px;
+      @include tablet {
+         flex-direction: column;
+      }
+      > div {
+         flex-basis: 50%;
+      }
+      .text_inform {
+         margin-right: 20px;
+         @include tablet {
+            margin-right: 0;
+            margin-bottom: 20px;
+         }
+         .name {
+            font-family: $condensed;
+            font-weight: 700;
+            font-size: 24px;
+            color: #565656;
+            margin-bottom: 10px;
+            @include mobile {
+               font-size: 18px;
+            }
+         }
+         p {
+            color: #565656;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.7;
+            @include mobile {
+               font-size: 12px;
+               line-height: 1.5;
+            }
+         }
+      }
+      .img_inform {
+         margin-left: 20px;
+         @include tablet {
+            margin-left: 0;
+            padding: 0 20px;
+         }
+         @include mobile {
+            padding: 0;
+         }
+         > img {
+            width: 100%;
+         }
+      }
+   }
+}
+
+
+#accordion {
+   .item_section {
+      margin-bottom: 12px;
+      .title {
+         background-color: #e5edf1;
+         padding-left: 60px;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         height: 45px;
+         transition: 0.2s;
+         position: relative;
+         cursor: pointer;
+         @include mobile-small {
+
+         }
+         &:before {
+            @include pseudo;
+            top: 0;left: 0;
+            width: 60px;
+            height: 100%;
+            background-repeat: no-repeat;
+         }
+         .name {
+            font-family: $condensed;
+            color: #565656;
+            font-size: 24px;
+            @include unSelect;
+            transition: 0.2s;
+            @include mobile {
+               font-size: 18px;
+            }
+            @include mobile-small {
+               font-size: 16px;
+            }
+         }
+         .indicator {
+            width: 60px;
+            height: 100%;
+            background-color: #b7272e;
+            position: relative;
+            .ico {
+               width: 100%;
+               height: 100%;
+               position: relative;
+               z-index: 1;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               background-image: url(../img/accordion_ico.png);
+               background-repeat: no-repeat;
+               background-position: center center;
+               transition: 0.2s;
+            }
+            &:after {
+               @include pseudo;
+               width: 0;
+               height: 0;
+               border-left: 0 solid transparent;
+               border-right: 15px solid #b7272e;
+               border-top: 46px solid transparent;
+               bottom: 0;
+               left: -15px;
+               z-index: 0;
+            }
+            &:before {
+               @include pseudo;
+               width: calc(100% + 15px);
+               height: 100%;
+               top: 0;
+               left: -15px;
+               background-image: url(../img/t-1.png);
+               background-repeat: no-repeat;
+               background-position: 0 0;
+               z-index: 1;
+            }
+         }
+         &:hover {
+            background-color: #004d74;
+            .name {
+               color: #fff;
+            }
+         }
+      }
+      .value_text {
+         background-color: #f7f7f7;
+         color: #565656;
+         font-size: 14px;
+         padding: 30px;
+         line-height: 1.8;
+         text-align: justify;
+         @include mobile {
+            font-size: 12px;
+            line-height: 1.5;
+         }
+         @include mobile-small {
+            padding: 15px;
+         }
+         > .li {
+            padding-left: 30px;
+            font-family: $condensed;
+            font-weight: 700;
+            font-size: 24px;
+            color: #565656;
+            background-image: url(../img/li.png);
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            @include mobile {
+               font-size: 18px;
+            }
+            @include mobile-small {
+               font-size: 16px;
+            }
+         }
+         > p {
+            padding-left: 30px;
+            margin-bottom: 25px;
+         }
+      }
+
+
+      &.show {
+         .title {
+            background-color: #004d74;
+            .name {
+               color: #fff;
+            }
+            .indicator > .ico {
+               transform: rotate(45deg);
+            }
+         }
+      }
+
+
+      // capabilities
+      &.capabilities {
+         .title {
+            &:before {
+               background-image: url(../img/capabilities.png);
+               background-position: 15px 10px;
+            }
+         }
+         &.show {
+            .title {
+               &:before {
+                  background-position: 15px -47px;
+               }
+            }
+         }
+         &:hover {
+            .title {
+               &:before {
+                  background-position: 15px -47px;
+               }
+            }
+         }
+      }
+
+      // work_order
+      &.work_order {
+         .title {
+            &:before {
+               background-image: url(../img/work_order.png);
+               background-position: 15px 12px;
+            }
+         }
+         &.show {
+            .title {
+               &:before {
+                  background-position: 15px -32px;
+               }
+            }
+         }
+         &:hover {
+            .title {
+               &:before {
+                  background-position: 15px -32px;
+               }
+            }
+         }
+      }
+   }
+}
+
+.our_achievements {
+   margin-bottom: 80px;
+   .wrap_achievements {
+      display: flex;
+      justify-content: center;
+      @include mobile {
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+      }
+      > .item {
+         border: 1px solid #e8e8e8;
+         background-color: #fff;
+         height: 285px;
+         width: 240px;
+         margin: 10px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+   }
+}
